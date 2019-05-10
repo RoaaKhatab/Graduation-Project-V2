@@ -174,14 +174,38 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ParentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904152350375_InitialMigration.cs" />
+    <Compile Include="Migrations\201904152350375_InitialMigration.Designer.cs">
+      <DependentUpon>201904152350375_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905090954286_AddUserName.cs" />
+    <Compile Include="Migrations\201905090954286_AddUserName.Designer.cs">
+      <DependentUpon>201905090954286_AddUserName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905091021592_NewUser.cs" />
+    <Compile Include="Migrations\201905091021592_NewUser.Designer.cs">
+      <DependentUpon>201905091021592_NewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905091026067_AddUserName1.cs" />
+    <Compile Include="Migrations\201905091026067_AddUserName1.Designer.cs">
+      <DependentUpon>201905091026067_AddUserName1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905102107286_Schools.cs" />
+    <Compile Include="Migrations\201905102107286_Schools.Designer.cs">
+      <DependentUpon>201905102107286_Schools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Schools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -190,12 +214,132 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\font-awesome.css" />
+    <Content Include="Content\css\jquery.fancybox.css" />
+    <Content Include="Content\css\slick.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\theme-color\burlywood-theme.css" />
+    <Content Include="Content\css\theme-color\dark-red-theme.css" />
+    <Content Include="Content\css\theme-color\default-theme.css" />
+    <Content Include="Content\css\theme-color\green-theme.css" />
+    <Content Include="Content\css\theme-color\orange-theme.css" />
+    <Content Include="Content\css\theme-color\pink-theme.css" />
+    <Content Include="Content\css\theme-color\purple-theme.css" />
+    <Content Include="Content\css\theme-color\red-theme.css" />
+    <Content Include="Content\css\theme-color\violet-theme.css" />
+    <Content Include="Content\css\theme-color\yellow-theme.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\img\about-us.jpg" />
+    <Content Include="Content\img\blog\blog-1.jpg" />
+    <Content Include="Content\img\blog\blog-2.jpg" />
+    <Content Include="Content\img\blog\blog-3.jpg" />
+    <Content Include="Content\img\counter-bg.jpg" />
+    <Content Include="Content\img\courses\1.jpg" />
+    <Content Include="Content\img\courses\2.jpg" />
+    <Content Include="Content\img\courses\3.jpg" />
+    <Content Include="Content\img\favicon.ico" />
+    <Content Include="Content\img\gallery\1-960x750.jpg" />
+    <Content Include="Content\img\gallery\20171123_d_DSCF4816.jpg" />
+    <Content Include="Content\img\gallery\36738345054_621ddc5ed7_b.jpg" />
+    <Content Include="Content\img\gallery\Activity-Rooms-8.jpg" />
+    <Content Include="Content\img\gallery\big\1.jpg" />
+    <Content Include="Content\img\gallery\big\2.jpg" />
+    <Content Include="Content\img\gallery\big\3.jpg" />
+    <Content Include="Content\img\gallery\big\4.jpg" />
+    <Content Include="Content\img\gallery\big\5.jpg" />
+    <Content Include="Content\img\gallery\big\6.jpg" />
+    <Content Include="Content\img\gallery\big\7.jpg" />
+    <Content Include="Content\img\gallery\big\8.jpg" />
+    <Content Include="Content\img\gallery\big\9.jpg" />
+    <Content Include="Content\img\gallery\DE-5711.jpg" />
+    <Content Include="Content\img\gallery\fancybox_buttons.png" />
+    <Content Include="Content\img\gallery\fancybox_loading%402x.gif" />
+    <Content Include="Content\img\gallery\fancybox_loading.gif" />
+    <Content Include="Content\img\gallery\fancybox_overlay.png" />
+    <Content Include="Content\img\gallery\fancybox_sprite%402x.png" />
+    <Content Include="Content\img\gallery\fancybox_sprite.png" />
+    <Content Include="Content\img\gallery\gallery_malvern-college-egypt_1484148807_720.jpg" />
+    <Content Include="Content\img\gallery\gallery_malvern-college-egypt_1484148809_720.jpg" />
+    <Content Include="Content\img\gallery\gallery_malvern-college-egypt_1512491262_720.png" />
+    <Content Include="Content\img\gallery\health-wellness.jpg" />
+    <Content Include="Content\img\gallery\M4-RUGBY.jpg" />
+    <Content Include="Content\img\gallery\Malvern College Egypt1.jpg" />
+    <Content Include="Content\img\gallery\ManagementScience&amp;EngineeringGraduateCertificate_MAIN.jpg" />
+    <Content Include="Content\img\gallery\science.jpg" />
+    <Content Include="Content\img\gallery\small\1.jpg" />
+    <Content Include="Content\img\gallery\small\2.jpg" />
+    <Content Include="Content\img\gallery\small\3.jpg" />
+    <Content Include="Content\img\gallery\small\4.jpg" />
+    <Content Include="Content\img\gallery\small\5.jpg" />
+    <Content Include="Content\img\gallery\small\6.jpg" />
+    <Content Include="Content\img\gallery\small\7.jpg" />
+    <Content Include="Content\img\gallery\small\8.jpg" />
+    <Content Include="Content\img\gallery\small\9.jpg" />
+    <Content Include="Content\img\loader.gif" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\mine\1.jpg" />
+    <Content Include="Content\img\mine\1548390713562.jpg" />
+    <Content Include="Content\img\mine\1_family_large-600x215.jpg" />
+    <Content Include="Content\img\mine\8568kkl.jpg" />
+    <Content Include="Content\img\mine\americanflag.jpg" />
+    <Content Include="Content\img\mine\americanflag2.jpg" />
+    <Content Include="Content\img\mine\british.gif" />
+    <Content Include="Content\img\mine\britsh.png" />
+    <Content Include="Content\img\mine\Children-Read-Desktop-Wallpaper-For-PC.jpg" />
+    <Content Include="Content\img\mine\egypt.png" />
+    <Content Include="Content\img\mine\france.jpg" />
+    <Content Include="Content\img\mine\Gerberas_Little_girls_498917_3840x2400.jpg" />
+    <Content Include="Content\img\mine\kids-photo-1.jpg" />
+    <Content Include="Content\img\mine\us.png" />
+    <Content Include="Content\img\slider\1.jpg" />
+    <Content Include="Content\img\slider\2.jpg" />
+    <Content Include="Content\img\slider\3.jpg" />
+    <Content Include="Content\img\teachers\teacher-01.png" />
+    <Content Include="Content\img\teachers\teacher-02.png" />
+    <Content Include="Content\img\teachers\teacher-03.png" />
+    <Content Include="Content\img\teachers\teacher-04.png" />
+    <Content Include="Content\img\testimonial-1.png" />
+    <Content Include="Content\img\testimonial-2.png" />
+    <Content Include="Content\img\testimonial-3.png" />
+    <Content Include="Content\img\testimonial-bg.jpg" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\custom.js" />
+    <Content Include="Content\js\jquery.counterup.js" />
+    <Content Include="Content\js\jquery.fancybox.pack.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\jquery.mixitup.js" />
+    <Content Include="Content\js\slick.js" />
+    <Content Include="Content\js\waypoints.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\scss\base\_base.scss" />
+    <Content Include="Content\scss\base\_mixins.scss" />
+    <Content Include="Content\scss\base\_variables.scss" />
+    <Content Include="Content\scss\layouts\_footer.scss" />
+    <Content Include="Content\scss\layouts\_header.scss" />
+    <Content Include="Content\scss\layouts\_nav.scss" />
+    <Content Include="Content\scss\modules\_buttons.scss" />
+    <Content Include="Content\scss\modules\_responsive.scss" />
+    <Content Include="Content\scss\modules\_sections.scss" />
+    <Content Include="Content\scss\modules\_theme-color.scss" />
+    <Content Include="Content\scss\modules\_typography.scss" />
+    <Content Include="Content\scss\style.scss" />
+    <Content Include="Content\img\mine\egypt.webp" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -241,9 +385,15 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Admin\ViewUsers.cshtml" />
+    <Content Include="Views\Admin\ViewSchools.cshtml" />
+    <Content Include="Views\Admin\AddSchool.cshtml" />
+    <Content Include="Views\Admin\EditSchool.cshtml" />
+    <Content Include="Views\Parent\Filteration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -257,6 +407,23 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201904152350375_InitialMigration.resx">
+      <DependentUpon>201904152350375_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905090954286_AddUserName.resx">
+      <DependentUpon>201905090954286_AddUserName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905091021592_NewUser.resx">
+      <DependentUpon>201905091021592_NewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905091026067_AddUserName1.resx">
+      <DependentUpon>201905091026067_AddUserName1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905102107286_Schools.resx">
+      <DependentUpon>201905102107286_Schools.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
